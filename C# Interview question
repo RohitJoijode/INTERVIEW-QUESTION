@@ -1,0 +1,557 @@
+1.What is the diference synchronous and asynchronous programming?
+
+
+
+				1. synchronous is code is excuted in sequence manner it's is called synchronous programming.
+
+				publc static int Method1() {
+					Thread.Sleep(500);
+					return 10;
+				}
+
+				publc static int Method2(){
+					return 20;
+				}
+
+				public static int method3(){
+					return 30;
+				}
+
+
+				Console.WriteLine(method1());
+				Console.WriteLine(method2());
+				Console.WriteLine(method3());
+
+
+				2. when a see task then code is excuted parallelly it's is called asynchronous programming.
+
+				public static void Main(string[] args){
+					Task task1 = Task.Run(() => {Console.WriteLine(Method1)});
+				    
+				    Task task2 = Task.Run(() => {Console.WriteLine(Method2)}); 
+
+				    Task task3 = Task.Run(() => {Console.WriteLine(Method3)});
+
+				    Console.Read();
+				}
+
+2.what is the difference between an abstract class and an Interface
+
+			     //ABSTRACT
+
+			    1.Abstract class contains both DECLARATION & DEFINITION of methods.
+
+			    public abstract class Employee
+			    {
+			      public abstract void Project();   //Method Declared
+
+			      public void Role() {
+			         Console.WriteLine("Engineer"); //Method Defined
+			      }
+			    }
+
+			    2.Abstract class keyword : ABSTRACT
+
+			    3.Abstract class does not support multiple Inheritance
+
+			    public abstract class Employee{
+			      public abstract void Project();
+
+			      public void Role() {
+			        Console.WriteLine("Engineer");
+			      }
+			    }
+
+			    public abstract class Employee1 {
+			       public abstract void Project1();
+
+			       public void Role1() {
+			         Console.WriteLine("Emgineer1");
+			       }
+			    }
+			    
+			     public class ParamnentEmployee: Employee,Employee1{//Getting error abstract class not allow multiple Inheritance
+
+
+			     }
+
+
+			     4.Abstract class can have Constructors.
+
+			     public abstract class Employee1{
+
+			       pulic Employee1(){
+
+			       }
+			       public abstract void Project1();
+
+			       public void Role1(){
+			          Console.WriteLine("Engineer1");
+			       }
+			     }
+
+
+			    //INTERFACE
+
+			    1.Interface should contain Declaration of methods.
+
+			    interface IEmployee{ 
+
+			       public void Project1(); //Only method Declaration is allowed
+
+			       public voide Manager1(); //Only method Declaration is allowed
+			    }
+
+			    2. Interface keyword : INTERFACE
+
+			    3.Interface supports multiple inheritance.
+
+			    Interface IEmployee1{
+			      public void Project1();
+			    }
+
+			    Interface IEmployee2{
+			      public void Project2();
+			    }
+			    
+
+			     public class NewEmployee : IEmployee1,IEmployee2
+			     {
+
+			        public void Project1()
+			        {
+			           Console.WriteLine("Print 1");
+			        }
+
+			        public void Project2() {
+			           Console.WriteLine("Print 2");
+			        }
+
+			     }
+
+			    4.Interface do not have constructors.
+
+			    interface IEmployee1(){
+
+			       public IEmployee1(){ //here getting compile error because Interface can't contain constructors.
+
+			       }
+
+			       public void Project1();
+			    }
+3.When to use Interface?
+
+				An Interface is a good choice when you know a method has to be there,but it can be implemented Differently by indepedent derived classes.
+
+				public class PermanentEmployee{
+					
+				}
+
+				public class ContractualEmployee{
+					
+				}
+
+				interface IEmployee{
+					public void AssignEmail();
+
+					public void AssignManager();
+				}
+
+				Normally we prefer Interface because it gives us the flexibly to modify the behavior at later stage.
+
+
+
+4.When to use abstract?
+		   
+		   Abstract class is a good choice when you are sure some methods are concrete/defined and must be implemented in the same way in all derived classes.
+
+		public class PermanentEmployee{
+			
+		}
+
+		public class ContractualEmployee{
+			
+		}
+
+		public abstract class EmployeeDress{
+			
+			 public abstract void DressCode();
+
+			public void DressColor() {
+			   Console.WriteLine("BLUE");
+			}
+		}
+5. what is .NET core?
+
+		 	.NET core is completely a new framework, which is a free and open source plateform developed and maintained by Microsoft.
+
+6.What are advanages of OOps in C# ?
+
+    1.Reuse of code using inheritance
+    2. flexibility of code using polymorphism
+    3. secure application by using encapulation
+    4. Easily scable from small to large application.
+
+7.what are the type of classes in C#?
+
+   public abstract class class1 {
+
+   }
+
+   public static class class2 {
+
+   }
+
+   public partial class class3 {
+
+   }
+
+   public sealed class class4 {
+
+   }
+
+8.Is it possible to prevent object creation of class in C#?
+
+		public abstract class Maths{
+			
+		}
+		private class science{
+			
+		}
+
+		public static class Social{
+			
+		}
+
+9.What is the difference between abstraction and encapsulation?
+
+     abstraction means showing only required things and hide the background details.
+
+     Encapsulation means wrapping of data and method into a single unit.
+
+     Abstraction is a broader conecpt hinding.
+
+     Whereas encapuslation is like a proper implementation where you wrap method and the data.
+
+10. what is the difference between overloading and overriding?
+   
+      public class BaseClass{
+
+         public virtual void Greeting(){
+            Console.WriteLine("BaseClass Hello!");
+         }
+      }
+
+      public class DerivedClass : BaseClass
+      {
+        public override void Greetings(){
+           Console.WriteLine("DerivedClass Hello1");
+        }
+
+
+
+        static void Main(){
+           DerivedClass objDerived = new DerivedClass();
+           objDerived.Greetings(); //DerivedClass Hello1
+           Console.ReadLine();
+        }
+      }
+
+			Method Overloading
+
+			1. Multiple methods of same name in single class
+			2. No need of inheritance, as it is in single class.
+			3. All methods have difference signature.
+			4. it's a compile time polymorphism.
+			5. No special keyword used.
+
+
+			Method Overriding 
+			1. multiple methods of same name in different class.
+			2. Inheritance is used as it is in different classs.
+			3. All methods hae same signature
+			4. it's run time polymorphism.
+			5. Virtual & Override keywords.
+
+
+Overriding is used to modify and provide a new implementation of the method Inherited from a base class
+
+
+if a method is marked as virtual, do we must have to "override" it from the child class?
+
+
+11.What are difference between IEnumerable and IQueryable 
+--> IEnumerable : - 1.IEnumrable exits in the system.Collections namespace.
+
+                    2. IEnumrable is suitable for querying data from in momory collections like list, array, and so on.
+
+                    3.while querying data from the database , IEnumrable excutes "Select Query" on the server-side.load data in - memory on the client and then filter the data.
+
+                    4.IEnumerable is beneficial for LINQ to object and 	Linq to XML queries.
+
+    Iqueryable : - 1. Iqueryable exits in the System.Linq namespace
+                   
+                   2. IQueryable is suitable for querying data out-momery like (like remote database, service) collections.
+                   
+                   3. while queryindg data from a database.Iqueryable excutes "Select query" on server side with all filters.
+                   
+                   4. IQueryable is beneficial for Linq to sql queies.
+
+
+
+
+12.what is difference between IEnumerable VS IEnumerator C#?
+--> Similarities
+    
+    Both of these interfaces help to loop through the collection.
+
+    so, now the next question, what should I use ?
+
+    As we know,both of these interfaces give the same result. but if you watch the syntax for IEnumerable it is very simple.
+
+    foreach(string AllMonths in IEnumerableOfString){
+             Console.WriteLine(AlMonth);
+    }
+
+   But in the case of IEnumerator, we need to invoke the MoveNext method and to retrieve the current item we need to invoke the current property.
+
+
+   Relation
+
+   the IEmunerable Interface actually uses IEnumerator.the main reason to create a IEnumerable is to make the syntax shorter and simpler.
+
+   if you go to the definition of the IEnumerable<T> interface.
+   you will see this interface has a method GetEnumerator() that return an IEnumerator object back.
+
+   In short, this IEnumerable uses IEnumerator internally.
+
+   
+
+13.What is the difference between IEnumerator and IEnumerable? [duplicate]
+
+
+         
+
+
+				An Enumerator shows you the items in a list or collection. Each instance of an Enumerator is at a certain position (the 1st element, the 7th element, etc) and can give you that element (IEnumerator.Current) or move to the next one (IEnumerator.MoveNext). 
+
+				When you write a foreach loop in C#, the compiler generates code that uses an Enumerator.
+
+				An Enumerable is a class that can give you Enumerators. 
+				It has a method called GetEnumerator which gives you an Enumerator that looks at its items. 
+				When you write a foreach loop in C#, the code that it generates calls GetEnumerator to create the Enumerator used by the loop.
+
+
+				IEnumerable and IEnumerator are both interfaces. IEnumerable has just one method called GetEnumerator. 
+
+				This method returns (as all methods return something including void) another type which is an interface and that interface is IEnumerator. 
+
+				When you implement enumerator logic in any of your collection class, you implement IEnumerable (either generic or non generic). 
+
+				IEnumerable has just one method whereas IEnumerator has 2 methods (MoveNext and Reset) and a property Current. 
+
+				For easy understanding consider IEnumerable as a box that contains IEnumerator inside it (though not through inheritance or containment). 
+
+				See the code for better understanding:
+
+
+				class Test : IEnumerable, IEnumerator
+				{
+				    IEnumerator IEnumerable.GetEnumerator()
+				    {
+				        throw new NotImplementedException();
+				    }
+
+				    public object Current
+				    {
+				        get { throw new NotImplementedException(); }
+				    }
+
+				    public bool MoveNext()
+				    {
+				        throw new NotImplementedException();
+				    }
+
+				    public void Reset()
+				    {
+				        throw new NotImplementedException();
+				    }
+				}
+
+14.what is ASP.NET State Management ?
+--> 
+
+     State management maintains and stores the information of any user till the end of the user session.
+
+
+     https://www.c-sharpcorner.com/UploadFile/b926a6/state-management-concept-in-Asp-Net/Images/State%20management.jpg
+
+
+   1.Server-side
+         
+         1.Session 
+
+         The session is a very important technique to maintain state. Normally session is used to store information and identity. The server stores information using Sessionid.
+
+         Set User Session
+
+			protected void btnSubmit_Click(object sender, EventArgs e)
+			{
+				Session["UserName"] = txtName.Text;
+
+				Response.Redirect("Home.aspx");
+			}
+
+					2.Session Event
+
+		             The session event can be seen in the project Global.asax file.
+
+						 Two types of Session Events
+
+					    1.Session_Start
+
+							The Session_start event is raised every time a new user requests without a session ID.
+
+							void Session_Start(object sender, EventArgs e)
+							{
+							    Session["master"] = "~/Master.master";
+							}
+
+						2.Session_End
+
+						   The Session_End event is raised when the session is ended by a user or a time out using the Session end method.
+
+							void Session_End(object sender, EventArgs e)
+							{
+									Response.Write("Session_End");
+							}
+
+               
+		     2.Application
+
+		            The application State is a server-side management state. It is also called application-level state management. This mainly stores user activity in server memory and application events shown in Global.asax file.
+
+		            There are three types of applications in ASP.NET.
+
+		            1.Application_Start
+
+						This event begins with domain start.
+
+						   void Application_Start(object sender, EventArgs e)
+							{
+							    Application["AppstartMessage"] = "Welcome to CSharp Corner Developer Community";
+							}
+
+						2.Application_Error
+
+						In this section manage unhandled exception errors.
+
+							void Application_Error(object sender, EventArgs e)
+							{
+									// Write an unhandled error code exception
+							}
+
+						3.Application_ End
+							This ends with domain or restarts IIS.
+
+							void Application_End(object sender, EventArgs e)
+							{
+							    Application["AppEndMessage"] = "Application Closed";
+							}
+
+			3.Cache
+		       
+		        The cache is stored on the server side. It implements Page Caching and data caching. The cache is used to set expiration policies.
+
+		        Response.Cache.SetExpiresTime(DateTime.Now.AddDays(1));
+
+   2.Client Side
+
+       Now here I am explaining client-side state management one by one:
+
+      Also, state management has the following four important parts available on the client side.
+
+      1.Cookie
+              Cookie is a small and an important part of ASP.NET. In this store user information, sessions, and applications. It can be created constantly and temporarily and they work with browser requests. Cookies are stored on the client side. The server can read cookies and abstract data.
+
+					Two types of cookies are available.
+
+					Persistence
+
+					This type of cookie works with Date and time.
+
+					Response.Cookies["CookieName"].Value = "Test Cookies";
+					// Set expire time
+					Response.Cookies["CookieName"].Expires = DateTime.Today.AddHours(1);
+
+					Non-Persistence
+
+					This is a temporary cookie. It is created with an access application and discards the closed application.
+
+					Response.Cookies["CookieName"].Value = "TestCookies";
+		
+		2.Control state
+
+			      The control state technique is developed to maintain data work properly in order. We can use view state but suppose view state is disabled by the user, the control will not work as expected. For the expected results of the control, we have to use the Control State. In the application, the Viewstate is by default true. Sometimes we need to use custom control to manage applications properly.
+                
+                if (!IsPostBack)
+						{
+						    lblmsg1.Text = "Welcome to C# corner";
+						    lblmsg2.Text = "Welcome to C# corner community";
+						}
+
+						When two messages are displayed on a Postback event, then control which one is displayed by using a customized control state.
+
+
+		3.Hidden Field
+
+		           Hidden fields are used to store value on the client side. The hidden field is not displayed on the browser, but it works on a request.
+
+		           if (HiddenField1.Value != null)
+						{
+						    int val = Convert.ToInt32(HiddenField1.Value) + 1;
+						    HiddenField1.Value = val.ToString();
+						    Label1.Text = val.ToString();
+						}
+
+		4.ViewState
+
+		          ViewState is a very useful client-side property. It is used for page-level state management. Viewstate stores any type of data and is used for sending and receiving information.
+
+						ViewState Demo Count: <asp:Label runat="server" id="lblcount" />
+						<asp:Button runat="server" id="Submit" onclick="Submit_Click" text="show" />
+
+						protected void Page_Load(object sender, EventArgs e)
+						{
+						 if (IsPostBack)
+						 {
+						     if (ViewState["count"] != null)
+						     {
+						         int ViewstateVal = Convert.ToInt32(ViewState["count"]) + 1;
+						         lblcount.Text = ViewstateVal.ToString();
+						         ViewState["count"] = ViewstateVal.ToString();
+						     }
+						     else
+						     {
+						         ViewState["count"] = "1";
+						     }
+						 }
+						}
+
+						protected void Submit_Click(object sender, EventArgs e)
+						{
+						 lblcount.Text = ViewState["count"].ToString();
+						}
+
+						OR,
+
+						ViewState["UserName"] = txtUserName.Text;
+
+						Viewstate is easy to apply and does not need access to any server resources. In a Viewstate, do not store big data, only store small values. Viewstate enables and disables page-level control. It also supports Encryption and Decryption and data/value is stored in hashed format. So we are not storing important data such as passwords, account information, etc. When more data is stored in this, then the page becomes heavy.
+
+       5.Query String
+             The query string stores the value in the URL.
+              
+              Response.Redirect("ShowStringValue.aspx?Username=" + txtUsername.Text);
+
+              It is visible to all the users in the URL as in the following link.
