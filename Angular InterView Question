@@ -1,0 +1,134 @@
+Angular InterView Question
+1. Differenct between angular js and angular ?
+-->
+               AngularJs    Angular
+Language      Javascript    Typescript
+Architecture  Controller    Compenent
+Mobile Complient No          yes
+CLI             No           yes
+Lazy loading     no          yes
+SEO              o           yes
+Server side      no          yes
+
+2. What are directives in angular ? 
+--> Directives changes the behavior of HTML DOM
+
+Like : - [(ngModel)],[hidden] like this 
+
+3.what are the different  types of angular directives?
+--> SAC
+
+Structural Directive : - Changes the DOM layout by adding and removing elements E g :- *ngIf *ngFor
+Attribute directive : - attributedirective  do not change structure of DOM rather than change the behaviour of HTML like colour, look and feel and hide an false, Changes the appearance and behaviour of HTML Elements. Eg : - [Hidden] 
+Component directive : - Directive with templates it's like a user control.which has own UI and own code 
+
+4. Explain the importance of NPM and Node_Modules folder?
+
+--> NPM is a Package manager which make installation of javascript framework easy.
+    node_module is the folder where all the packages are intalled.
+
+    Eg : Installation of jQuery package
+    command line : - NPM install jquery
+
+5. Explain the importance of package.json file in Angular ?
+--> it has all the javascript reference needed for a project. so rather than installing one packages at a time we can install app packages in one go.
+
+6. what is typescript and why do we need it?
+
+--> typescript superset of javascript. it added type casting added to javascript.
+    it's provided Object oriented programming environment which converts to javascript.
+
+
+7. what is Angular CLI ? 
+--> angular CLI is a command line inteface by which we can create intial angular project templete
+
+   Command line : - ng new myapp using CLI we create project structure of application.
+
+8. Explain the importance of compenent and modules ?
+--> Componet is where you write  your binding code. Module logically groups components.
+
+9. what is a decorator in angular ?
+--> Decorator defines what kind of Angular class is it. for example if you decorate "@Component" then it says it's an angular component,if you put "@NgModule" it becomes a Angular Module.
+
+11. What are Annotation or MetaData?
+
+--> 
+
+12. What is a template?
+
+--> Template is an HTML View of Angular in which we can write directies.
+
+There are two way of defining Template one is lnline and other is a seprate HTML file.
+
+templateUrl : it's is a Link to HTML 
+
+template : it's is inline templete in @Compenent Directive
+
+13. Expain the for types of data binding in Angular?
+
+--> it's a communication between View with Component.
+
+1.string Expression/interpolation :- Data flows from componet to the View and we can mix the same with HTML tags. ( syntex : - {{CustomerObj.CustmerId}})
+
+
+2.propety binding : - Data flow from component to the view. (  syntex : -  [])
+
+3.Event binding : - when you want to sent event from the view to the component. (syntex : -  (click) )
+
+4.two way binding :- Data flows from Component to the view and vice versa :- syntex [(ngmodel)]
+
+14. Explain architecture of angular?
+
+--> Template --> Template(View) --> Component --> Module( is a group of component) 
+
+Service (it's is injected to Constructer (dependacy injection) service inside write a common logic of application)
+
+
+15. What is SPA (single page application) in Angular ?
+--> SPA stands for single page application.
+
+ single page application are applications where the main UI gets loaded once and then the needed UI is loaded on demand.
+
+
+16. How to Implement SPA in Angular?
+
+--> Routing is a simple collection which has two thing URL and when this URL is called which component to load.
+
+so Routing help you to define the navigation for your angular application. so if you want to move from one screen to other screen and you want to respect SPA That means not loading and refreshing the whole UI Routing is needed.
+
+17. How to implement routing in angular?
+
+--> [routerLink] = "['Home']" when click on button we use routerLink attribute directive
+
+<router-outlet><router-outlet> load on html
+
+this.route.navigate([/Home']);
+
+18. what is Lazy Loading?
+
+--> Lazy loading means on demand loading.
+    Loading only the necessay HTML,CSS and JavaScript files so that you have better performance.
+
+
+19. How to implement Lazy loading in Angular?
+
+--> Divide your project in to modules.
+
+Use "loadhildren" to load Module (use in Route module)
+
+20. what are Services in Angular ?
+
+---> Service help you to share common logic across angular projects.
+
+21. what is Depedency Injection?
+
+--> Dependency injection is an application design pattern where rather then creating object instances from within the component. Angular injects it via the constructor.
+
+22. how to implement Dependecy injection?
+--> Dependency injection is an application design pattern where rather than creating object instances from within the component. Angular injects it via constructor.
+
+23. what the benefit of dependency Injection?
+--> Dependency injection help to decouple class dependenies. so that whenn you add new dependencies you do not have change everywhere.
+
+24. Diferentiate between ng serve and ng build?
+--> "ng serve" build in memory while "ng build" builds on the hard disk. so when you want to go for production "ng build" command is used.
