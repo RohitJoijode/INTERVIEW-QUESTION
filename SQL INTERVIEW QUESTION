@@ -1,1 +1,150 @@
 
+1. what are ACID Property?
+--> ACID Properties are used when you are multiple transaction handling in sql.
+
+     1.Atomicity :- at the all trasaction execute or none execute
+     2.Consistency :- all data inserted or Updated should be constain remain
+     3.Isolation :- one transaction should not affect another transaction.
+     4.Durability :- inserted or commited not must be lost even power cut.
+
+2. what is CTE in SQL Server?
+--> A common table expression, is a temporary named result set, that you can within a select,insert,update or delete statement.
+
+         --engineers CTE Name
+    WITH engineers as (
+    select * from employees where dept='Engineering' --CTE body
+    )
+    
+
+    Select * from engineers ---use CTE
+
+3. What is the difference between Delete,Trancate and Drop Commands?
+-->
+        DELETE FROM Employees where Emp_Id = 7;
+
+        TRUNCATE TABLE EMPLOYEES; 
+
+        DROP TABLE EMPLOYEES;
+
+          DELETE :- 1. it is a DML.
+                    2. it is used to delete rows from the table based on where condition.
+                    3. it will not delete schema only delete Data. of the table
+                    4. it can be rollback.
+
+
+           TRUNCATE :-1. It is a DDL
+                      2. It is used to delete all rows from the table.
+                      3. It wil not delete schema onle deleted data of the table.
+                      4. trancate table it can not be rollback.
+
+            DROP     :- 1. It is a DDL
+                        2. It is used to delete rows from the table.
+                        3. it will delete schema.
+                        4. it can not be rollback
+
+4. What is the difference between stored procedure and function ?
+--> 
+
+     Stored procedure :- 1. SP may or may not return a value.
+                         2. SP can have both input/output parameters
+                         3. SP can call function inside it
+                         4. SP Cannot be embedded i SQL Statement like SELECT,INSERT etc.
+                         5. SP can have try-catch exception handling inside it.
+                         6. SP can use transactions inside it.
+
+    function          :- 1. function must return value
+                         2. function only has input parameters.
+                         3. function cannot call SP inside it.
+                         4. functions can be embedded in sql statements Select *,dbo.fnCountry(city.long) from city
+                         5. Functions cannot have try-catch inside it.
+                         6. functions cannot have transaction inside it.
+
+
+5.What are Indexes in SQL Server?
+--> SQL Indexes are used in relational databases to retrieve data very fast.
+
+    for example :- it's similer to indexes start of the book index.
+
+6. what is Non-Clustered index? how to create non-clustered index on a table?
+--> 
+
+   1.A non-clustered index is stored at one place and table data is storedin another place.
+
+   for example :- it's similer to indexes start of the book index.
+
+   2.a table can have multiple non-clustered index in a table.
+
+   3.Unique key is a part of Non-Clustered index
+
+   Query :- 
+
+     CREATE NONCLUSTERED INDEX <index_name>
+     ON <table_name>(<column_name> ASC/DESC)
+
+7.What is Clustered Index? How to create clustered index?
+--> 1. A Clustered index is a type of index that determines the physical order of data in a table.
+
+     for example : - Discnery
+
+     2. Table data can be sorted in only way, therefore, there can be only one clustered index per table.
+     3. in sql server, if you set a primary key on column, then it will automatically create a clustered index on that particular column.
+    
+
+     CREATE CLUSTERED INDEX <index_name>
+     On <table_Name>(<column_name> ASC/DESC)
+
+8. what is the difference between scope_identity and @@identity?
+--> 
+
+    @@IDENTITY function returns the last identity value generated within the current session, regardless of the scope. (scope means when two entry going table symentensly some wrong id generated)
+
+    The SCOPE_IDENTITY() function return the last identity created in the same session and the same scope. (but not this case)
+
+9. how to optimize a stored precedure or SQL Query?
+--> 
+
+    1. Use SET NOCOUNT ON. (Set count taking more memory space)
+    2. Specify column names instead of using *.
+    3. Use schema name before objects or table names.
+    4. Use EXISTS instead of COUNT()
+    5. Use transaction when required only.
+    6. Do not use dynamic queries they are vulnerable to sql injections.
+
+10. what is a Cursor? why to avoid them?
+-->     a database Cursor is a control which enables iteration over the row or records in the table or select statement.
+
+   CASE
+   @product_name VARCHAR(MAX),
+   @list_price   DECIMAL;
+   DECLARE CURSOR_PRODUCT CURSOR
+   FOR SELECT Product_name,list_price FROM production.products;
+   OPEN Cursor_Product;
+   FETCH NEXT FROM Cursor_Product INTO
+   @product_name,
+   @list_price;
+
+   WHILE @@FETCH_STATUS = 0
+      BEGIN
+         PRINT @Product_name + CAST(@lis_price AS varchar);
+         FETCH NEXT FROM cursor_product INTO
+          @product_name,
+          @list_price;
+     END;
+     CLOSE Cursor_product;
+     DEALLOCATE Cursor_product;
+
+     Limitation :- 
+                   A Cursor is memory resident set of pointers.
+
+11.what is View ?
+
+--> a View is a Virtual table which consists of a subset fo data contained in single or more than one table.
+
+  Advntanges of views
+  1. Indexed view improve the performance.
+  2. Extra security :- DBA can hide the actual table names and expose views for Read operaions only.
+  
+
+
+
+
