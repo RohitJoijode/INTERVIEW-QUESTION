@@ -71,9 +71,9 @@ template : it's is inline templete in @Compenent Directive
 1.string Expression/interpolation :- Data flows from componet to the View and we can mix the same with HTML tags. ( syntex : - {{CustomerObj.CustmerId}})
 
 
-2.propety binding : - Data flow from component to the view. (  syntex : -  [])
+2.propety binding : - Data flow from component to the view. ( squere bracket  syntex : -  [])
 
-3.Event binding : - when you want to sent event from the view to the component. (syntex : -  (click) )
+3.Event binding : - when you want to sent event from the view to the component. ( parentheses or round brackets syntex : -  (click) )
 
 4.two way binding :- Data flows from Component to the view and vice versa :- syntex [(ngmodel)]
 
