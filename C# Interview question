@@ -1,4 +1,4 @@
-1.What is the diference synchronous and asynchronous programming?
+1. What is the diference synchronous and asynchronous programming?
 
 
 
@@ -35,7 +35,7 @@
 				    Console.Read();
 				}
 
-2.what is the difference between an abstract class and an Interface
+2. what is the difference between an abstract class and an Interface
 
 			     //ABSTRACT
 
@@ -139,7 +139,7 @@
 
 			       public void Project1();
 			    }
-3.When to use Interface?
+3. When to use Interface?
 
 				An Interface is a good choice when you know a method has to be there,but it can be implemented Differently by indepedent derived classes.
 
@@ -161,7 +161,7 @@
 
 
 
-4.When to use abstract?
+4. When to use abstract?
 		   
 		   Abstract class is a good choice when you are sure some methods are concrete/defined and must be implemented in the same way in all derived classes.
 
@@ -210,7 +210,7 @@
 
    }
 
-8.Is it possible to prevent object creation of class in C#?
+8. Is it possible to prevent object creation of class in C#?
 
 		public abstract class Maths{
 			
@@ -223,7 +223,7 @@
 			
 		}
 
-9.What is the difference between abstraction and encapsulation?
+9. What is the difference between abstraction and encapsulation?
 
      abstraction means showing only required things and hide the background details.
 
@@ -280,7 +280,7 @@ Overriding is used to modify and provide a new implementation of the method Inhe
 if a method is marked as virtual, do we must have to "override" it from the child class?
 
 
-11.What are difference between IEnumerable and IQueryable 
+11. What are difference between IEnumerable and IQueryable 
 --> IEnumerable : - 1.IEnumrable exits in the system.Collections namespace.
 
                     2. IEnumrable is suitable for querying data from in momory collections like list, array, and so on.
@@ -300,7 +300,7 @@ if a method is marked as virtual, do we must have to "override" it from the chil
 
 
 
-12.what is difference between IEnumerable VS IEnumerator C#?
+12. what is difference between IEnumerable VS IEnumerator C#?
 --> Similarities
     
     Both of these interfaces help to loop through the collection.
@@ -327,7 +327,7 @@ if a method is marked as virtual, do we must have to "override" it from the chil
 
    
 
-13.What is the difference between IEnumerator and IEnumerable? [duplicate]
+13. What is the difference between IEnumerator and IEnumerable? [duplicate]
 
 
          
@@ -378,7 +378,7 @@ if a method is marked as virtual, do we must have to "override" it from the chil
 				    }
 				}
 
-14.what is ASP.NET State Management ?
+14. what is ASP.NET State Management ?
 --> 
 
      State management maintains and stores the information of any user till the end of the user session.
@@ -555,3 +555,334 @@ if a method is marked as virtual, do we must have to "override" it from the chil
               Response.Redirect("ShowStringValue.aspx?Username=" + txtUsername.Text);
 
               It is visible to all the users in the URL as in the following link.
+
+
+15. what is the use of Yeild keyword in C#?
+--> The Yeild keyword will act as an irerator blocker and generate or return values.
+
+16. what is SOLId PRINCIPLES ?
+--> Single Response Principle : - a class should have only one reason to change
+    open/Closed Principle :-- Open for extension close for modification.
+	Liskov substitution principle : - subtypes must be substitutable for their base types.
+	Interface segregation principle : -client should not be forced to depend on interfaces they do not use.
+	Dependency inversion principle :- depend on abstrations, not concretions.
+
+17. what are Serialization and Deserialization? what are the types of serialization?
+--> Serialization is the process of converting an object into a format that can be stored, transmitted, or reconstructed later. 
+
+		types of Serialization : - Binary Serialization
+		                           XML Serialization
+								   Json Serialization
+
+	Deserialization is the process of converting serialization data , such as binary,xml,json data, back to into object.
+
+18. What is a method/function in C#?
+--> A method is a code block that contains a series of statement.
+
+19. what is Property?
+-->    
+   public class MyClass
+   {
+	 private int myProperty; // directly access not allow to Property this is violation of the Property.
+
+	 public int MyProperty{ // first of all you set pubic and then read and write a method.
+		get { return myProperty }
+		set { myProperty = value; }
+	 }
+   }
+
+   a property is a class member that provides a flexible mechanism to read and write Private field.
+
+
+20. what is the difference between Property and Function?
+--> 
+
+    Property is a specialized function only
+
+	public class Property_function
+	{
+		public int MyProperty {get;set;} // this a specialized function get is read and set is write 
+
+		public int MyProperty() {//getting error dublicate function is not allow 
+
+		}
+	}
+
+21. what are NameSpaces?
+
+ namespace MyNameSpaces{
+
+	public class MyClass{
+		//class implement
+	}
+ }
+
+
+ using MyNameSpaces;
+ MyClass MyInstance = new MyClass();
+
+ A namespace is a container for a set of related classes and other types.
+ 
+ 21. Does C# support multiple Inheritance? how can you implement multiple inheritance in C#?
+ 
+ --> No (C# does not support Multiple Inheritance)
+
+ Alternative way to do multiple inheritance is via multiple interfaces.
+
+
+
+
+22. how to prevent a class from being inerited?
+--> Sealed and static class we can't be inerited a class.
+
+Defference between sealed & static class, but you cannot create the object of static class
+
+23. Are private class members inherited to the derived class?
+
+--> no the private members cannots be inherited to derived class.
+
+   Only public and protected class members can be inherited to DerivedClass
+
+24.what is Encapulation?
+
+--> Encapsulation means wrapping of data and method into a single unit.
+
+public class Employee{
+
+	private int empExperience;
+
+	public int Empexperience{
+		get { return empExperience; }
+		set { empExperience = value; }
+
+	}
+}
+
+25. what is the difference between abstraction and Encapsulation?
+--> 
+Abstraction means showing only required things and hide the background details.
+
+Encapsulation means wrapping of data and method into a single unit.
+
+Abstractionis is a broader concept of hiding.
+
+Whereas encapulation is like a proper implementation where you wrap implementation where you wrap method and the data.
+
+26. what is polymorphism and what are its types?
+
+--> polymorphism is the ability of a variable,object, or function to take on multiple form.
+
+overloading
+
+public class polymorphism{
+	public int add(int a , int b){
+           return a * b;
+	}
+
+	public string Add(string Str1,string Str2) {
+		return Str1 = Str2;
+	}
+}
+
+  two type of polymorphism?
+
+  Overloading :- complie time
+  Overriding : - run time
+
+27. what is Method Overloading ? in how  many ways a method can be Overloading?
+
+--> public class MethodOverloading
+{
+	public int Add(int a, int b){
+		return a * b;
+	}
+
+	public int Add(int a, int b, int c){
+
+		return a * b * c;
+    }
+}
+
+Method overloading is a type of polymorphism in which we can create multiple methods of the same name in the same class, and all methods work in different way.
+
+    Three way of method Overloading
+
+	1. Number of parameter are different
+	2. type of parameter are different
+	3. Order of parameter are different
+
+28. what is the use of Overriding? when should I override the methods?
+--> 
+
+  public class technology{
+
+	  public virtual void TechnicalSkill() {
+		Console.WriteLine("Coding");
+	  }
+
+	  public virtual void CommunicationSkill(){
+		Console.WriteLine("English");
+	  }
+  }
+
+  public class java : technology{
+
+  }
+
+  public class Dotnet : technique{
+
+
+  }
+  public class Testing : technology{
+	public override void TechnicalSkill() {//why create this method because we don't create method inside statement so we derived from base class
+		Console.WriteLine("Testing");
+	}
+  }
+
+  Overriding is used to modify and provide a new implementation of the method inherited from a base class.
+
+  29. Can you create an instance of an abstract class or an Interface?
+
+  --> No. Abstract class and Interface purpose is to act as base class  via inhritance. there object creation is not possible.
+
+  30. Do Interface can have a constructor?
+
+    interface IEmployee1{
+		public IEmployee1() {
+
+		}
+
+		public void Project1();
+	}
+
+	No, Interface can only be used for Inheritance, so constructor is not required.
+
+31.what is the difference between abstraction and abstract class?
+--> 
+
+   Abstraction means showing only required things and hide the background details.
+
+   Abstract class is one of the way to implement abstraction.
+
+32. can Abstract class be sealed or static in C#?
+
+-->
+
+    public sealed abstract class Employee{
+       public abstract int salary();
+
+	   public string Role(){
+		return "Developer";
+	   }
+
+	}
+
+	No, Abstract class are used for Inheritance,but sealed and static both will not allow the class to be inherited.
+
+33. Do abstract class have constructor in C#?
+--> yes,it is possible
+
+ public abstract class Employee{
+	public Employee(){
+		console.writeLine("Employee Code");
+	}
+ }
+
+ public class PermanentEmployee : Employee{
+
+ }
+
+ static void Main(string[] args){
+
+    ParamnentEmployee employee = new ParamnentEmployee()
+
+	//Output Employee Code
+ }
+
+34. Can you declare abstract methods as Private in C#?
+
+pubic abstract class Employee{
+
+	private abstract int salary();
+
+	public string Role(){
+		return "Developer";
+	}
+}
+
+No abstract methods are only declared, and they must be implemented in the derived class,
+therefore they can not be private.
+
+35. Does abstract class multiple inheritance?
+
+--> 
+   public abstract class technology{
+	 public abstract void Dotnet();
+   }
+
+   public abstract class Role{
+	public abstract void Lead();
+   }
+
+   public class Employee : technology,Role // here getting error abract class not allow multiple inheritance
+
+{
+
+}
+
+  No, only at maximum one abstract class can be used for inheritance.
+  but multiple interface can be used.
+
+36. what is Boxing and Unboxing?
+--> 
+
+    static void Main(string[] args){
+         int num = 100;
+		 object obj = num; //boxing
+	}
+
+	Boxing is the process of converting from value type to reference type.
+
+    static void Main(string[] args){
+         int num = 100;
+		 object obj = num; 
+          
+		  int i = (int)obj; //Unboxing
+
+	}
+    
+	   Unboxing is the process of converting to reference type to value type.
+
+
+37. which one is explicit Boxing or Unboxing
+-->
+    static void Main(string[] args){
+         int num = 100;
+		 object obj = num; 
+          
+		  int i = (int)obj; //Unboxing
+
+	}
+
+	unboxing is explicit conversion process.
+
+38. what is Internal access modifier?
+
+ ---> Internal Modifier is used to tell that access is limited to the current assembly (project).
+
+39. where we use boxing and unboxing in real application?
+
+--> ArrayList arrayList = new ArrayList();
+
+ arrayList.Add(i); //boxing
+
+int k = (int)arrayList[0] //unboxing
+
+40. Is Boxing and Unboxing good for Performance?
+
+--> No, converting from one type to another type is not good from Performance point of view.
+
+
+
+
+
