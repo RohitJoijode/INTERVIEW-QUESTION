@@ -144,7 +144,141 @@
   1. Indexed view improve the performance.
   2. Extra security :- DBA can hide the actual table names and expose views for Read operaions only.
   
+12.what is the difference between having clause and where clause?
+-->
+    
+
+    SELECT COUNT(CustomerID),Count FROM Customers
+    FROM Customers
+    WHERE Country = "India"
+    GROUP BY Country
+    HAVING COUNT (CustomerID) > 5;
+
+    WHERE :- Where clause is used before group by clause.
+             Where clasue cannot contain aggregate function.
 
 
+
+
+
+    Having : - Having clause is used after group by clause.
+               having clause can contain aggregate function.
+
+13.what is a constraint is SQL? what are it's types of constraint?
+--> SQL constraints are used to specify rules for the data in a table.
+    
+    CREATE TABLE Students (
+    ID int Not null primary key,
+    name varchar(255) not null,
+    courseId int foreign key references 
+    age in not null check (age >= 18),
+    admissionDate date Default getdate(),
+    constraint UC_Student UNIQUE(ID,Name)
+    
+    );
+
+14.what is the difference between primary key and unique key?
+--> 
+
+       Primary key :- 1.primary key can't accept null values.
+                      2.Automatically create clustered index.
+                      3.Only one primary key can be present in a table.
+
+
+
+
+
+       Unique key :- 1.Unique key can accept only one null value.
+                     2. Create non clustered index.
+                     3. more than one unique key can be present in a table.
+
+
+15.what are triggers?
+--> triggers are stored programs, which are automatically executed or fired when some events (Insert,delete and update) occur.
+
+  Example of After (DML) Trigger
+
+  CREATE TRIGGER TR_UPD_Locations ON Locations
+  FOR UPDATE
+  NOT FOR REPLICATION
+  AS
+  BEGIN
+    INSERT INTO LocationHist
+    SELECT LocationID
+    ,getdate() FROM inserted
+
+  END
+
+  16.What are the types of triggers?
+  -->    
+                           TRIGGERS
+        DML                                        DDL            Logon --this are catogory of the trigger
+                                                                 
+Instead of triggers        after triggers         CREATE          Session logon event
+Insert                     Insert                  ALTER
+update                      Update                 Drop
+delete                      Delete
+                      
+
+In after trigger, update on the table executed first and then after trigger will be fired.
+
+
+CREATE TRIGGER [dbo].[TRG_VM_EMPDETAILS]
+ON [dbo].[VW_EMPDETAILS]
+INSTEAD OF INSERT
+AS
+BEGIN
+   --Logic here 
+END
+
+instead of trigger allows you to skip an insert, delete, or update to a table and execute other statement defined in the trigger.
+
+
+17. what is auto increments/identity column in sql server?
+--> identity column or auto increament allows a uniques numbers to be generated automatically when a new record is inserted into a table.
+
+
+18.what is sub query or nested query or inner query in sql ?
+--> query inside query using where clause this sub query or nested query or inner query
+
+19.what are joins in sql ?
+--> a join clause is used to combine rows from two or more table , based on a related column between them.
+
+20.what are the type of join?
+--> left outer join :- a left join returns all the rows from the left table , along with any matching rows from the right table.
+
+right outer join :- a right join returns all the row from the right table, along with any matching rows from the left table.
+
+full outer join :- a full outer join returns all the rows from both the left and right table in the join.
+
+inner join :- an inner join returns only the common rows from both tables that meet the join condition.
+
+21. what is self-join?
+--> a self join is a join of a table to itself.
+
+22. what is Union in SQL Server?
+--> Union operator is used to combine the result set of two or more SELECT statements.It merges the output of multiple queries into a single result set, ensuring that only destinct values are included by default.
+
+for example : select City from customer
+              Union
+              select City from Suppliers
+
+23. what is Cross Join?
+ -- Cross join is operation that combines each row of one table with each tow of another table, resulting in the cartersian product of the set of rows from the tables that are joined.
+
+ Ex. Select * from student,Teacher
+
+24. when to use out and when to use ref keyword?
+
+--> Use out parameter to return a new and fresh value and use ref to modity an eisting value.
+
+25. what are the magic tables in sql?
+--> Magic table are the temporary logical table that are created by the sql server, whenever there are insertion or deletion or upate(D.M.L) operations.
+
+       1.Inserted :- when any insert query executed, then the recently inserted row gats added to the INSERTED magic table.
+
+       2.DELETED : - when any delete query executed, then the recently deleted row gets added to the DELETED magic table.
+
+       3.UPDATED :- In update case, the updated row get stored in inserted magic table and the old row or previous row get stored in the deleted magic table.
 
 
