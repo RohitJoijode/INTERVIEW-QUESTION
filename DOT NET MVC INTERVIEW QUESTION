@@ -1,1 +1,211 @@
+1. what are the advantages of MVC over Web form?
+--> 
+
+    advantages Of MVC Over web form : -
+   1. In web forms one aspx file will have one aspx.cs file, which means UI(aspx) is tightly couple with logic in code-behind (.aspx.cs).
+
+   1.In MVC one controller can interect with multiple views and one view can iteract with multiple controlers and therefore they are loosely coupled.
+
+   Advantages of MVC Over Web-form : 
+
+   1. Separation of concerns
+   2. multiple view support
+   3. Testability
+   4. Light-weight
+   6. full features of asp.net
+
+2. what is MVC? Explain MVC life cycle ?
+--> MVC is a framework for building web applications using MVC architecture.
+
+(VIEW) USER (request) --> Controller --> MODEL
+
+MOdeL (response) --> CONTROLLER --> VIEW (USER)
+
+
+     1.The Model represents the data.
+     2.The view displays the data.
+     3.The controllers act as an interface between Model and view components to process the business logic.
+
+3.What are filters and their types in MVC?
+
+--> filters in ASP.NET MVC are used to inject logic that runs before or after an action method is executed.
+
+4.what is Authorization filter in MVC?
+--> Authorization filters are used to enforce authentication and authorization rules for your action method.
+
+            [Authorize(Roles="Admin")]
+            public ActionResult Create(){
+                // Logic for creating action method
+            }
+
+5.What are the exception filter in MVC?
+--> Exception filters are used to handle exceptions that occur during the executon  of an action method
+
+        [LogExceptionFilter]
+        public ActionResult Index(){
+            //Logic for displaying
+        }
+
+        public class LogExceptionFilter : FilterAttribute,IExceptionFilter
+        {
+            public void OnException(ExceptionContext filterContext){
+                //This code will be executed when an exception is throw in Action method
+            }
+        }
+
+6.What are Result filter in MVC?
+--> Result filter run before and after the result of an action method is executed. Eg. [OutputCache(Duration = 3600)]
+
+
+     [LowResultfiler]
+      public ActionResult Index() {
+        //Your action logic here
+        return View();
+      }
+
+
+public class LowResultfiler : FilterAttribute,IResultfilter
+{
+    public void OnResultExecuting(ResultExecutingContext filter)
+    {
+         // this code will be executed before the action result
+    }
+
+    public void OnResultExecuted(ResultExecutingContext filter){
+     // this code will be excecutd after the action result
+    }
+}
+
+7. What are Action filters in MVC ?
+--> Action filter are custom filters which can run before and after an action mmethod is executed.
+
+   [LogActionFilter]
+   public ActionResult Index() {
+       // logic 
+   }
+
+
+   public class LogActionFilter : ActionFilterAttribute
+   {
+    public override void OnActionExcuting(ActionExcuting ){
+       //this code will be executed before the action method
+    }
+    
+     public orverride void OnActionExecuted(ActionExcuted){
+          // this code will be executed after the action method.
+     }
+
+   }
+
+8. what is an Assembly? what are the different types of assembly in .NET? 
+--> Assembly is unit of deployment like EXE or a DLL.
+
+Private assembly : - A private assembly can be used by a single application only.
+
+it is not accessible outside.
+
+All the projects you create will be default create private assembly only.
+
+public / shared assembly : - share assemblies are usually libraries of code , which multiple application an share.
+
+it is registered in the global assembly cache (GAC).
+
+Satellite assembly : - A satellite assembly is defined as an assembly with resources only, no executable code. Eg. resx file are satellite assembly.
+
+9. How to implement security in web applications in MVC
+--> 
+1.Error Handling :- Must setup custom error page.
+2.Cross-site-scripting(XSS) attacks :- must validate inpute controls
+3.Mallicious file upload : - Must validate the extension of files.
+4.SQL Injection attack :- use ORMs, stored procedures and avoid inline and dynamic queries.
+
+10. what is routing in MVC ? what is attribute based routing?
+--> the routing system is responsible for directing incoming request to the appropriate controller, based on the URL.
+
+
+attribute base routing : - Attribute based routing used to manipulate the default behaviour of routing in ASP.Net MVC.
+
+    http://localhost:1234/Home/about 
+
+    [Route("Users/about")]
+    public ActionResult GotoAbout(){
+        return View();
+    }
+
+11. Explain the concept of MVC Scaffolding?
+--> In ASP.NET MVC, scaffolding is a technique that generates code very fast wich can help developers to create web application more quickly and with less manual coding.
+
+Create
+Delete
+Details
+Edit
+List
+
+12. How validation works in MVC? what is data annotation?
+
+--> validation can be done in mvc using data annotation attributes.
+
+ 
+
+ public class Student
+ {
+    public int StudentId {get;set;}
+
+    [Required]
+    public string StudentName {get;set;}
+
+    [Rage(10,20)]
+    public int Age {get;set;}
+ }
+
+ 13. what is Bundling and minifiaction in MVC?
+--> Bundling lets us combine multiple js, css, files, so that they can be downloaded as a single unit.
+
+Minification squeezes out whitespace and performs other type of compression to make the downloaded files as small as possible.
+
+14. what is partial View?
+--> a partial view is a reusable view component that can be rendered within other views or shared across multiple pages in a web application.
+
+  <div class="container">
+     <h1>Products</h1>
+     @Html.Partial("_ProductList");
+  <div>
+
+15. what are the different return types of a controller Action method?
+--> 
+     Types of action result
+
+       View
+       PartialView
+       Json
+       Content
+       File
+       RedirectToRoute
+       Redirect
+       HttpNotFoudResult
+       HTTPStatusCodeResult
+
+16. what is the differene between ViewData,viewBag & TempData?
+--> ViewData is ViewBag are used to transfer data from controller to view
+
+2.tempdata is used to pass data from controller to controller and one action method to another action method
+
+17. what is Authentication and Authorization in ASP.Net MVC?
+--> authentication is the process of verfitying the identity of a user by validating their Credential such as Username and password.
+
+Authorization is the process of allowing an authenticated user access to resources.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
