@@ -882,6 +882,94 @@ int k = (int)arrayList[0] //unboxing
 
 --> No, converting from one type to another type is not good from Performance point of view.
 
+41. what is String Interpolation in C#?
+--> string Interpolation is  a techniques that enables you to insert expression values into strings.
+
+    static void Main(string[] args){
+	
+	string name = "Happy";
+	
+	Console.write("name is {0}", name);
+	Console.write("name is " + name);
+
+	//string Interpolation
+	Console.Write($"name is {name}")
+	}
+
+	// output : my name is Happy
+
+42.how to inmplement Exception handling in C#?
+--> 
+
+   1.Execption handling in object-oriented programming is used to manage errors.
+   try {} catch(Exception ex) {} finally {}
+
+43.can we execute multiple catch blocks?
+--> 
+
+   try{}catch(Arithemeticexcetion ex){}catch(ArgumentOutOfRange ex){}
+
+   No, we can write multiple catch blocks, but when we will run the application and if any error occur, only one out of them will execute based on the type of error.
+
+44.when to use finally in real application?
+--> finally block is mostly used to dispose the unwanted objects when they are no more required.
+
+
+    try{}
+    catch(){
+	}finally{
+	}
+45.Can we have only "try" block without "catch" block?
+
+--> yes we can have only try block without catch block, but the we must have finnaly block with try block.
+
+46. what is the difference between finally and finalize?
+--> 
+
+    finally is used in exception handling.
+
+	finalize is a methhod which is automatically called by the garbage collector to dispose the no longer needed objects.
+
+47.what are the difference between Array and Arraylist?
+--> 
+
+    int[] array;
+	array = new int[10]
+	array[0] = 1;
+	array[1] = "Happay";
+
+	ArrayList arrayList;
+	arrayList = new ArrayList();
+
+	arrayList.Add(1);
+	arrayList.Add("Happy");
+
+1.array is strongly typed but arraylist can store any type of items.
+2.array can cantain fixed number of item but arraylist can stored any number of item.
+
+
+48.what is the difference between Arraylist and hasttable?
+-->
+
+ in Arraylist we can only add items/values to the list.
+
+ but in hashtable we can add items/values with the keys.
+
+
+49.what is the difference between List and Dictionary collection?
+
+-->  
+    List :- 
+    List is a collection of items.
+	it is the generic version of arraylist.
+
+	Dictionary :- 
+	Dictionary is a collection of key value pair.
+	It is the generic version of hashtable.
+
+
+
+
 
 
 
