@@ -52,7 +52,7 @@ Component directive : - Directive with templates it's like a user control.which 
 
 11. What are Annotation or MetaData?
 
---> 
+--> same of decorator concepts
 
 12. What is a template?
 
@@ -68,14 +68,14 @@ template : it's is inline templete in @Compenent Directive
 
 --> it's a communication between View with Component.
 
-1.string Expression/interpolation :- Data flows from componet to the View and we can mix the same with HTML tags. ( syntex : - {{CustomerObj.CustmerId}})
+1.string Expression/interpolation {{}} :- Data flows from componet to the View and we can mix the same with HTML tags. ( syntex : - {{CustomerObj.CustmerId}})
 
 
-2.propety binding : - Data flow from component to the view. ( squere bracket  syntex : -  [])
+2.propety binding [] : - Data flow from component to the view. ( squere bracket  syntex : -  [])
 
-3.Event binding : - when you want to sent event from the view to the component. ( parentheses or round brackets syntex : -  (click) )
+3.Event binding (): - when you want to sent event from the view to the component. ( parentheses or round brackets syntex : -  (click) )
 
-4.two way binding :- Data flows from Component to the view and vice versa :- syntex [(ngmodel)]
+4.two way binding [()]:- Data flows from Component to the view and vice versa :- syntex [(ngmodel)]
 
 14. Explain architecture of angular?
 
@@ -98,7 +98,9 @@ so Routing help you to define the navigation for your angular application. so if
 
 17. How to implement routing in angular?
 
---> [routerLink] = "['Home']" when click on button we use routerLink attribute directive
+--> route module inside define collection of route string and component mapping 
+
+[routerLink] = "['Home']" when click on button we use routerLink attribute directive
 
 <router-outlet><router-outlet> load on html
 
@@ -132,3 +134,50 @@ Use "loadhildren" to load Module (use in Route module)
 
 24. Diferentiate between ng serve and ng build?
 --> "ng serve" build in memory while "ng build" builds on the hard disk. so when you want to go for production "ng build" command is used.
+
+25. what are difference between Authentication and Authorization?
+--> 
+
+      Authentication: - proving who you are, often through a username and password or other credentials.
+
+      Authorization:- determining what you are allowed to do or access based on your identity,roles,and permissions after you've been authenticated.
+
+26. how would you implement authentication and authorization in an angular application?
+--> There are different approaches to implemention authentication and authorization in an angular application, but here's a high-level overview of a common approach:
+
+1.Use a backend service or identity provider to handle user authentication and provide access tokens.
+
+2.store the access token in a secure way. such as using HTTP-only cookies or local storage and session storage.
+
+3.Create an angular HTTP interceptor that automatically add the access token to outgoing requests.
+
+4.Create an authentication service that provides methods for login,logout,and checking the current user's authentication status.
+  this services should also handle refereshing the access token when it exprires.
+
+27. what is NgModule?
+--> 
+NgModule is a core building block in angular application that is used to organize and configure the application. 
+NgModule is essentially a container that group together related components,directive, pipes and services, and provides a compilation context for the application.
+the purpose of the NgModule is to provide a way to organize and modularize the application into smaller, more manageable pieces. by breaking the application down into smaller modules,it becomes easier to maintain and scale,and it is also possible to selectively load different parts of the application depending on the user's needs.
+In an NgModule, developers can define a set of providers which are essentiaaly the services that are used within the module.
+the NgModule can also define the components,directives and pipes that are associated with the module.
+one of the main benefits of using NgModules that they enable lazy loading of application functionality.by splitting the application into smaller modules, the application can be loaded more quickly and efficiently,as only the modules that are needed at any given time are loaded.
+
+28.In an angular applicaton, there are various way to handle errors. here are some common approaches:
+--> 
+
+1. Error Handling Service : -
+                            Create a service that handles errors and displays them to the user in a user-frienly way.
+                            This services can be used to catch and handle errors globally across the application.
+
+2.Observable Error Handling :- 
+                             when using observables. you can use the 'catchError' operator to catch and handle errors.
+                             this can be useful when making HTTP requests or working with other asynchronous operations.
+
+
+
+
+
+
+
+
