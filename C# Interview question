@@ -1495,3 +1495,82 @@ var filterNum  = from n in num where n > 2 select n;
 
 --> a lambda expression is used to simplify the syntax of anonymous methods.
 
+85. what is the difference between first and FirstOrDefault method in Linq?
+--> first method will return the first value, but it is not able to handle null values.
+
+     FirstOrDefault will return the first value, and it is able to handle null value also.
+
+86.what is the use of using keyword in C#?
+--> there are two purpose of using keyword in C#:
+
+1. Using Directive
+
+2. Using Statement:- the using statement ensures to call DISPOSE() method even if an exception occurs.
+
+86. what is the use of static class?
+--> a static class is a class which object can not be created , and which can not be inherited.
+
+static classes are used as containers for static members like methods, static members like methods, constructor and others.
+
+87. what are collections in C# and what are their types?
+
+--> C# Collections are used to store, manage and manipulate data.
+
+for example arraylist,dictionary,list,hashable etc.
+
+88. what is the difference between string and stringbuilder?
+
+--> string is immutable in C#.
+
+StringBuilder is mutable in C#.
+
+89. what are access specifiers?
+--> access specifiers are keyword to specify the accessiblity of a class,method, property, field.
+
+    pubic 
+	private
+	Internal
+	protected
+	protectedInternal
+
+90. what are the basic string operations in C#?
+
+-->
+   Concatenate :- two strings can be concatenated either by using a system.String.Concate or by using + operator.
+
+   string str1 = "this is one";
+   string str2 = "this is two";
+
+   string str2 = str1 + str2;
+
+   Replace : - Replace(a,b) is used to replace a string with another string.
+
+   Trim  : - Trim() is used to trim the white spaces in a string a the end.
+
+   contains : - check if a string contains a pattern of substring or not
+
+   if(str.Contains("test")){
+   
+   }
+91. why to create interfaces in real application?
+
+--> Benefits of interfaces:
+
+   1.Help in defining the contract of the system.
+
+   2. unit testing is easy  in application having interfaces.
+
+   3. used for implementing dependacy injection.
+
+92. can we define body of interfaces methods? when to define methods in interfaces?
+
+public Interface IEmployee{
+    
+	 public void Role(){
+	   Console.WriteLine("Developer");
+	 }
+
+}
+
+Yes form C# 8.0 it is possible to put method bodies in interfaces.
+
