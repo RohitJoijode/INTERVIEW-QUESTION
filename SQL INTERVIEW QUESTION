@@ -264,13 +264,13 @@ for example : select City from customer
               select City from Suppliers
 
 23. what is Cross Join?
- -- Cross join is operation that combines each row of one table with each tow of another table, resulting in the cartersian product of the set of rows from the tables that are joined.
+ -- Cross join is operation that combines each row of one table with each two of another table, resulting in the cartersian product of the set of rows from the tables that are joined.
 
  Ex. Select * from student,Teacher
 
 24. when to use out and when to use ref keyword?
 
---> Use out parameter to return a new and fresh value and use ref to modity an eisting value.
+--> Use out parameter to return a new and fresh value and use ref to modity an existing value.
 
 25. what are the magic tables in sql?
 --> Magic table are the temporary logical table that are created by the sql server, whenever there are insertion or deletion or upate(D.M.L) operations.

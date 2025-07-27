@@ -583,7 +583,7 @@ if a method is marked as virtual, do we must have to "override" it from the chil
 -->    
    public class MyClass
    {
-	 private int myProperty; // directly access not allow to Property this is violation of the Property.
+	 private int myProperty; // private property directly access not allow to Property this is violation of the Property.
 
 	 public int MyProperty{ // first of all you set pubic and then read and write a method.
 		get { return myProperty }
@@ -966,6 +966,8 @@ int k = (int)arrayList[0] //unboxing
 	Dictionary :- 
 	Dictionary is a collection of key value pair.
 	It is the generic version of hashtable.
+
+50.
 
 
 
