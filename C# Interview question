@@ -967,12 +967,261 @@ int k = (int)arrayList[0] //unboxing
 	Dictionary is a collection of key value pair.
 	It is the generic version of hashtable.
 
-50.
+50.what is the use of IEnumerable in c#?
+--> IEnumerable Inteface is used when we want to iterate among our collection classes using a foreach loop.
+
+		var employees = new List<Employee>(){
+		    new employee() {Id = 1,Name = "Bill"},
+		    new employee() {Id = 2,Name = "Steve"},
+		}
+
+		foreach(var employee in employees){
+		
+		Console.WriteLine(employee.Id + ", ");
+		
+		}
+		
+		public class List<T> : ICollection<T>, IEnumerable<T>{
+		
+		}
+
+51.What is constructor ?
+--> A constructor is  a speialized method in the class which gets executed when a class object is created.
+
+ constructor name is same is the class name 
+
+ 52.what are the types of constructor?
+ --> 
+
+             1.Defualt constructor
+			 2.Parameterized constructor
+			 3.copy constructor
+			 4.static constructor
+			 5.private constructor
 
 
+51.What is Default contructor?
+--> a default constructor is a contructor that is automatically created by the compiler,if no other constructor are defined in the class.
 
+public class MyClass
+{
+   public MyClass() {
+   
+   }
 
+}
 
+static void Main(string[] args){
+  MyClass myclass = new MyClass();
+}
+    
+52.What is Paramterized constructor?
+--> a constructor with at least one parameter is a parameterized contructor.
 
+public class MyClass{
+   public MyClass(int a){
+       Console.WriteLine(a);
+   }
+}
+
+static void Main(string[] args){
+   MyClass myclass = new MyClass(100);
+}
+
+//Output : 100
+
+53.what is static constructor?
+--> static constructor is used to be called defore any static memeber or  a class is called
+
+public class MyClass
+{
+   static MyClass(){
+     Console.WriteLine("constructor");
+   }
+
+   public static void Print(){
+     Console.WriteLine("Method");
+   }
+
+}
+
+static void Main(string[] arg){
+   MyClass.Print();
+}
+
+//output : constructor method
+
+54.Can we have parameters or access modifer in static constructor?
+
+--> No, static constructor can not have parameters or acces modifier.
+
+55.What is copy constructor?
+--> the constructor which creates an object by copying variables from another object is called a copy constructor.
+
+public class MyClass{
+    public string Name;
+
+	//Parametried constructor
+	public MyClass(string Name){
+	    this.Name = Name;
+	}
+
+	//Copy constructor
+	public MyClass(MyClass copy){
+	  name = copy.name;
+	}
+
+}
+
+56.What is private construtor? what is the use?
+--> when a constructor is created with a private specifier, it is not possible for other classes to derive from hhis class,neither is it possible to create an instance of this class.
+
+one use is singleton design pattern.
+
+public class MyClass{
+   private MyClass(){
+     Console.WriteLine("Private");
+   }
+}
+
+static void Main(string[] args){
+    MyClass myClass = new MyClass();
+}
+
+57.what is constructor overloading?
+--> constructor overloading is a technique to define multiple constructor within a class with different set of parameters.
+    public class Employee
+	{
+	   public Employee(){
+	    Console.WriteLine("Blank");
+	   }
+
+	   public Employee(int id){
+	      Console.WriteLine(id);
+	   }
+	
+	}
+
+	static void Main(string[] args){
+	Employee emp = new Employee();
+	Employee emp1 = new Employee(30);
+	}
+
+	//output blank 30
+
+58.what is Destructor?
+--> Destructor is a apposit of constructor.
+
+Destructor in C# are methods inside the class used to destory instances/ojects of that class when they are no longer needed.
+
+The Destructor is called implicitly by the .net framework's garbage collector. it be never define a code.it's automatically excuted.
+
+public class Employee{
+
+  public Employee(){
+  
+  }
+
+  ~Employee() {
+  
+  }
+
+59.can you create object of class with private constructor in C#?
+
+--> No
+
+pulic class MyClass{
+      private Myclass(){
+	  
+	  }
+     }
+
+}
+
+60. what is the difference between pass by value and pass by reference parameters?
+
+--> 
+  //passing by Reference
+
+    static void Main(string[] args)
+	{
+	   int x  = 5;
+	   int y  = 10;
+
+	   console.WriteLine(x + " " + y);
+	   PassByReference(ref x,ref y);
+	   console.WriteLine(x + " " + y);
+	   //output : 5 10
+	   //output : 100 200
+	}
+
+	static void PassByReference(ref int x,ref int y){
+	  x = 100;
+	  y = 200;
+	}
+
+61.How to return more than one value from a method in C#?
+
+--> 
+
+  1. by using ref or out parameters.
+
+  2. By using Tuples
+
+  3. by using a list.ArrayList(any collection)in the return type.
+
+62.What is difference between out and ref parameters?
+
+-->
+     static void Main(string[] args){
+	    int a;  //1. No need to initialize out parameter before passing it.
+		int b = 5; //2. must initialize ref paramter.
+
+		withRefout obj = new withRefOut();
+
+		int x = obj.Update(out a, ref b);
+
+		Console.WriteLine(x);
+		Console.ReadLine();
+	 }
+     
+	  public class withRefOut
+	  {
+	     public int update(out int c,ref int d)
+	      {
+		    C = 100; //3.out parameter must be initialized before returning.
+			return c + d;// 4. for ref parameter, initialization is not neccessary before returning.
+		  }
+	  }
+
+63. what is the use of params keyword in C#?
+--> params keyword is used as a parameter which can take variable number of parameters.
+
+static void Main(string[] args){
+    int sum = add(,5,10,15,20)
+	Console.WriteLine(sum);
+	Console.ReadLine();
+}
+
+public static int Add(params int[] numbers){
+
+   int total = 0;
+   foreach (int i in number)
+   total += i;
+
+   return total;//output 
+}
+
+64.What is the use of optional paramters in a method?
+--> optional parameters allow some aruments which are not mandatory to pass, and their default value is set.
+
+          static void Main(string[] arg){
+		    AddOptional(10,20);
+			AddOptional(10,20,30)
+		  }
+
+	public static void AddOptional(int i,int j,int k = 50){
+	  Console.WriteLine(i + j + k);
+	}
 
 
