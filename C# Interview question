@@ -1224,4 +1224,274 @@ public static int Add(params int[] numbers){
 	  Console.WriteLine(i + j + k);
 	}
 
+65. what is the use of named paramters?
+--> named paramters are used to specify an arguments based on the name of the arguments and not the position.
+
+  static void Main(string[] args){
+  // Normal way
+   add(5,10,2,3);
+
+   //Named Parameters 
+   add(a: 2.0;b: 3,x: 5,y: 10);// do not maintain sequence of parameters
+
+  }
+
+  static void Add(int x,float y,double a, deciaml b)
+  {
+  
+  }
+
+66.what is the use of Extention method in C#?
+--> Extention method allows you to add new methods in the existing class without modifying the source code of the original class.
+
+this keyword is used for binding extension method with the main original class.
+
+string test = "Helloword";
+
+string left = test.Substring(0,5);
+
+Console.WriteLine(left);
+
+string right = text.Right(5);
+Console.WriteLine(right);
+
+// output Hello
+//world
+
+
+static class stringExtension{
+
+ public static string Right(this.String s,int count){
+     return s.substring(s.length - count,count);
+ {
+ 
+ }     
+
+
+}
+
+
+67. what is use of delegates in C#?
+--> A delegate is a variable that holds the referrence to a method or pointer to a method.
+
+a delegate can refer to more than one method of same return typeand parameters.
+
+when to use delegate?
+
+when we need to pass a method as a parameter.
+
+       delegate void calculator(int x, int y);
+
+class Program{
+
+  public static void add(int a , int b){
+     Console.WriteLine(a+b);
+  }
+
+  public static void Mul(int a,int b){
+    Console.WriteLine(a * b);
+  }
+
+
+  static void Main(strin[] args){
+
+     //Intantiating Delegate
+    Calculater calc = new Calculator(Add);
+
+	//Calling method using delegates
+	cal(20,30);
+
+
+  }
+}
+
+68. what is multicast delegates?
+--> a multicast delegates in C# is a delegates that holds the references of more than one function.
+
+
+   class Program{
+
+  public static void add(int a , int b){
+     Console.WriteLine(a+b);
+  }
+
+  public static void Mul(int a,int b){
+    Console.WriteLine(a * b);
+  }
+
+
+  static void Main(strin[] args){
+
+     //Intantiating Delegate
+    Calculater calc = new Calculator(Add);
+
+	cal +- mul
+
+
+	//Calling method using delegates
+	cal(20,30);
+
+
+	//output : 50 600
+
+
+  }
+}
+
+69. when to use out and when to use ref keyword?
+--> use out parameter to return a new and fresh value and use ref to modify an existing value.
+
+70. what is the difference between Events and Delegates?
+
+--> 
+
+  A delegates is a variable that hold the reference to method or pointer to a method.
+
+  the event is a notification mechanisum that depends on delegates.
+
+   functions -> Deletgate -> Event
+
+ 
+  Event is like a wrapper over the delegate to improve it's security.
+
+
+71. what is the ue of this keyword in C#?
+
+--> this keyword is used to refer to the current instance of the class.
+
+72. can we use Using statement with other classes apart from DBConnection?
+
+--> Yes using keyword can be used with any class which is inherited from IDisposable class.
+
+for example with StreamReader class.
+
+73. whatisthe difference between is and as operators?
+
+--> is : - the is operator is used to check the type of an object.
+
+    as : - as poerator is used to perform conversion between compatible reference type.
+
+74. what are the difference between readonly and constant variables?
+
+--> 
+
+ Constant
+  
+  class Example{
+     
+	  public const int myConst = 10;
+
+	  public constint myConst1;
+
+	  public example(int b){
+	    myConst = 20;
+	  }
+  
+  
+  }
+
+  1. using constant we must assign value with declaration itself.
+  2. Constant field value cannot be changed.
+  3. Const keyword used.
+
+  ReadOnly
+
+  class Example{
+     public readonly int myReadOnly1 = 100;
+
+	 public readonly in myReadOnly2;
+
+	 public Example(int b){
+	    myReadOnly2 = b * 100;
+	 }
+  }
+
+  1. but readonly field can be assigned in declaration as well as in the constructor part.
+  2. Readonly field value can be changed.
+  3. Readonly keyword used.
+
+75. what is the difference between var and dynamic in C#?
+--> 
+
+ static void Main(string[] args){
+ 
+ var a = 10;
+ a = "Interview";
+
+ Console.WriteLine(a);
+ 
+ }
+
+ VAR : - the type of the variable is decided the compiler at compile time.
+
+  static void Main(string[] args){
+ dynamic a = 10;
+ a = "Interview";
+
+ Console.WriteLine(a);
+ 
+ }
+
+ DYNAMIC :- The type of variable is decided at run time.
+
+76. what is the use of enum keyword?
+
+ --> an enum is a special class that represents a goup of constants.
+
+77. is it possible to inherit enum in C# ?
+
+--> enum is a sealed class type, so it cannot be inherited.
+
+78. what is the use of yield keyword?
+
+--> this yeid keyword will act as an iterator blocker and generate or return values continuously.
+
+//input 10
+
+//output : 0 2 4 6 8
+
+static IEnumerable<int> getEven(int upto)
+{
+
+    for (int i = 0; i <= upto; i +=2){
+	yield return i;
+
+    Console.WriteLine("Print");
+	}
+
+}
+
+79. what is the use of base keyword in C#?
+--> base kayword is used to access members of a base class from a derived class.
+
+80. what are auto mplemented properties in C#?
+--> auto implemented properties in C# are a simplified way to declare a property.
+
+81. Expain Generics in C#?
+--> generics allows us to make classes and methods type indepedent or type safe.
+
+82. what is Linq ?
+when to use Linq in real applications?
+--> Linq (Language integrated query) is uniform query syntax in C# to retrieve data from different sources.
+
+using System.Linq
+
+var filterNum  = from n in num where n > 2 select n;
+
+83. what are the advanages & disadvantages of Linq?
+--> 
+
+    Advantages of Linq
+	1. Easy and simple syntax to learn
+	2. Improved code readabilty
+	3. improved performance 
+	4. type safety
+
+	Disadvantages of Linq 
+	1.Limited support of some data sources
+	2. Difficult to maintain and debug.
+
+84. what is Lambda Expressions?
+
+--> a lambda expression is used to simplify the syntax of anonymous methods.
 
