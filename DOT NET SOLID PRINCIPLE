@@ -1,0 +1,48 @@
+
+1. what is SOLId PRINCIPLES ?
+
+-->     Single Response Principle : - a class should have only one reason to change
+        open/Closed Principle :-- Open for extension close for modification.
+	Liskov substitution principle : - subtypes must be substitutable for their base types.
+	Interface segregation principle : -client should not be forced to depend on interfaces they do not use.
+	Dependency inversion principle :- depend on abstrations, not concretions.
+
+2. what is Single Responsibility principle?
+--> SRP say that each class, modules or function in your program should only do one job.
+
+  In other words, each should have full responsiblility for a single functionality of the program.
+
+  suppose we have customr class then we will do all the customer related thing in customer class.
+
+why SRP:
+
+--Easy Testing
+--Parallel development
+-- Loose coupling
+
+3. what is Open close principle (OCP)?
+--> OCP say that classes, method , modules etc. are open for extension but closed for modification.
+
+  why OCP?
+
+   End up testing the entire functionality
+   QA team need to test the entire flow
+   Cosly process
+
+4. what is Interface Segregation principle?
+--> ISP say client should not be forced to implement interfaces they don't use. so instead  of huge interfaces, it is better to create multiple small ones so that they are utilized in the best possible way.
+
+Suppose we have two method in interface and two classes are using this interface. one class is using both method of interface and second class is usng one method but as we have two method in this interface we are forcing here to use both method in second class.
+
+Instead of this we can create two interface with single - single method and class one can implement both interface as class 1 required both method and class 2 can implement on interface.
+
+5. Dependency inversion principle (DIP)
+-> DIP say high-level modules should not depend on low-level modules instead both should depend on abstraction (Interface).
+
+   why DIP?
+   Loose Coupling
+   with the help of dependency injection we can achieve better and easy Dependency inversion principle.
+
+  In Asp.net we were using unity block for dependency injection but in .net core 3.1 we have inbuild dependecy injection.
+
+
