@@ -1,11 +1,11 @@
 
 1. what is SOLId PRINCIPLES ?
 
--->     Single Response Principle : - a class should have only one reason to change
-        open/Closed Principle :-- Open for extension close for modification.
-	Liskov substitution principle : - subtypes must be substitutable for their base types.
-	Interface segregation principle : -client should not be forced to depend on interfaces they do not use.
-	Dependency inversion principle :- depend on abstrations, not concretions.
+-->		Single Responsibility Principle : - a class should have only one reason to change
+		open/Closed Principle :-- Open for extension close for modification.
+		Liskov substitution principle : - subtypes must be substitutable for their base types.
+		Interface segregation principle : -client should not be forced to depend on interfaces they do not use.
+		Dependency inversion principle :- depend on abstrations, not concretions.
 
 2. what is Single Responsibility principle?
 --> SRP say that each class, modules or function in your program should only do one job.
@@ -28,6 +28,16 @@ why SRP:
    End up testing the entire functionality
    QA team need to test the entire flow
    Cosly process
+
+
+6.what is Liskov substitution Principle in C#?
+--> The Liskov Subsitution principleis the third of the five Solid principle of objec-oriented design 
+
+  objects of a superclass should be replaceable with object of its subclasses without breaking the application.
+
+  In other words, if you have a base class and derived classes, you should be able to use any derived class wherer the base classs is expected and the program should continue to work correctly
+
+
 
 4. what is Interface Segregation principle?
 --> ISP say client should not be forced to implement interfaces they don't use. so instead  of huge interfaces, it is better to create multiple small ones so that they are utilized in the best possible way.
