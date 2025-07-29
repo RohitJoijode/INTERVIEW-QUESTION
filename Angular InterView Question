@@ -176,6 +176,108 @@ one of the main benefits of using NgModules that they enable lazy loading of app
 
 
 
+29.What are Componenets in Angular?
+--> Componenets are the most basic UI building block of an Angular app.
+
+30. what is a selector and Template?
+--> A selector is used to identify each component uniquely into the component tree.
+
+31. what is Module in Angular? what is app.module.ts file?
+
+--> Module is a place where you can group the components,directives,pipes, and services, which are related to the application.
+
+
+32.How an angular app gets loaded and started? what are index.html,app-root,selector and main.ts?
+-->
+     Index.html --> Angular is used to create single page application.index.html file is that single page.Index.html will invoke main.js file which is the javascript version of main.ts file.
+     
+     Main.ts    --> Main.ts file is like the entry point of web-app.it compiles the web-app and boostraps the application the AppModule to run in the browser.
+
+     app.module.ts --> App module file will then boostrap the Appcomponent.
+
+     App-component --> App-component or app-root component is the html which you will see finally.
+
+33.what are pipes? what are the type of Pipes & parameterized Pipes?
+--> Pipes are simple functions which accept an input value and return a transformed value 
+
+
+    two type of Angular Pipe
+
+     Built in pipe :- Lowercase
+                      Uppercase
+                      date
+                      Percentage
+                      currency
+                      decimal
+                      slice 
+                      json
+       
+       Custom pipe : -
+
+
+
+34. what are lifcycle hooks in angular?
+--> A component from creation to destruction goes through several stages and these stages are the life cycle hooks.
+
+The stages will cover activities like:
+
+           construction --> It is default method of the typescript class that is executed when the class is instatiated. it always run before any anguar hook and it is not a part of lifecycle hooks.
+            ngOnChanges --> Called when input property changes
+            ngOnInit    --> Called when the component  is creatd.
+            ngOnChanges --> Called for component children.
+                ngAfterContentinit    - called for component children.
+                ngAfterContentChecked - called for component children.  - called when the component is destroyed.
+                ngAfterViewlinit      - called for component children.  - called when the component is destroyed.
+                ngAfterViewChecked    - called for component children.  - called when the component is destroyed.
+            ngOnDestory  - called when the component is destroyed.
+
+
+
+     -- Compoenent Instantialing.
+     -- Rendering the component html view.
+     -- Destroying the component.
+
+35.what is constructor in angular?
+--> the constructor is a method in TypeScript class that automatically get called when the class is being instantiated.
+
+constructor always run before any angular hook and it is not a part of lifecycle hooks.
+
+constructor is widely used to inject dependencies(services) into the component class.
+
+
+36. what is Decorator?
+--> Angular decorators store metadata about a class, method , or property.
+
+ metadata is "Data that provide information about other data".
+
+ All Decorators are represent with @ symbol.
+
+37.what are the type of Decorator?
+-->
+            
+   Types of Decorators  :- class decorators
+                           @NgModule
+                           @Component
+                           @Injectable 
+                           @Directive
+                           @Pipe
+
+    Proprty Decorators   :- @input
+                            @Output
+                             
+                            @ContentChild
+                            @ContentChildren
+                            @ViewChild
+                            @ViewChildren
+                            @HostBinding
+
+    Method Decorators     :- @HostListner
+
+    Parameter Decorators   :- @Inject
+                              @Self
+
+
+
 
 
 
