@@ -7,7 +7,7 @@ Architecture  Controller    Compenent
 Mobile Complient No          yes
 CLI             No           yes
 Lazy loading     no          yes
-SEO              o           yes
+SEO              no           yes
 Server side      no          yes
 
 2. What are directives in angular ? 
@@ -19,7 +19,7 @@ Like : - [(ngModel)],[hidden] like this
 --> SAC
 
 Structural Directive : - Changes the DOM layout by adding and removing elements E g :- *ngIf *ngFor
-Attribute directive : - attributedirective  do not change structure of DOM rather than change the behaviour of HTML like colour, look and feel and hide an false, Changes the appearance and behaviour of HTML Elements. Eg : - [Hidden] 
+Attribute directive : - attribute directive  do not change structure of DOM rather than change the behaviour of HTML like colour, look and feel and hide an false, Changes the appearance and behaviour of HTML Elements. Eg : - [Hidden] 
 Component directive : - Directive with templates it's like a user control.which has own UI and own code 
 
 4. Explain the importance of NPM and Node_Modules folder?

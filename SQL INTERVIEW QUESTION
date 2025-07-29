@@ -68,7 +68,7 @@
 6. what is Non-Clustered index? how to create non-clustered index on a table?
 --> 
 
-   1.A non-clustered index is stored at one place and table data is storedin another place.
+   1.A non-clustered index is stored at one place and table data is stored in another place.
 
    for example :- it's similer to indexes start of the book index.
 
