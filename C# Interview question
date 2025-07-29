@@ -1274,7 +1274,7 @@ static class stringExtension{
 67. what is use of delegates in C#?
 --> A delegate is a variable that holds the referrence to a method or pointer to a method.
 
-a delegate can refer to more than one method of same return typeand parameters.
+a delegate can refer to more than one method of same return type and parameters.
 
 when to use delegate?
 
@@ -1365,7 +1365,7 @@ class Program{
 
 for example with StreamReader class.
 
-73. whatisthe difference between is and as operators?
+73. what is the difference between is and as operators?
 
 --> is : - the is operator is used to check the type of an object.
 
