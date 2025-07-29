@@ -1,1 +1,33 @@
+1. what are	Service lifetime?
+--> there are three main service lifetimes that determine how long a service instance lives and when a new instance is created:
+
+    1.Transient Lifetime
+                       
+                        Registration : - AddTransient<TService, TImplementation>();
+                        Behavior : - A new instance is created every time the service is requested.
+                                    Each controller gets a fresh instance when it asks for one.
+
+                        Use Case :-  1.Lightweight, stateless services
+                                     2.Services where each consumer needs its own isolated instance.
+
+    2.Scoped Lifetime 
+                       Registration : - AddScoped<TService, TImplementation>();
+                       Behavior     : - 1.One instance is created per client request (scope).
+                                        2.The same instance is reused throughout a single HTTP request.
+                                        3.Different requests get different instances.
+
+                        Use Case: - 1.Entity Framework DbContext (default in ASP.NET Core).
+                                    2.Services that need to maintain state during a single request
+
+    3.Singleton Lifetime
+                        Registration:-  AddSingleton<TService, TImplementation>();
+                        Behavior: -1.A single instance is created for the entire application lifetime.
+                                   2.The same instance is used for all requests.
+                                   3.Lives until the application shuts down
+
+                        Use Case:
+                                    1.Memory cache
+                                    2.Application configuration
+                                    3.Services that maintain global state
+
 
