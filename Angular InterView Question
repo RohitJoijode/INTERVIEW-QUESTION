@@ -276,8 +276,132 @@ constructor is widely used to inject dependencies(services) into the component c
     Parameter Decorators   :- @Inject
                               @Self
 
+38.what is the differene between Promise and observable?
+--> 
+ 
+        Observable : - 1.Emit multiple values over a periodof time also called streaming of data.
+                       2. Are lazy :- they're not executed until we subscribe to them using the subscribe() method.
+                       3. Have sebscription that are cancellable using the Unsubscribe() method.
+
+        Promise :- 1. emit a single value at a time
+                   2. Are not lazy executed immediately after creation.
+                   3. are not cancellable.
+
+39. what is observable ? How to implement observable?
+--> Observables are used to stream data to multiple component.
+
+      It's a 3 step process:-
+
+                          1.import observable from RxJS Library.
+                          2.create Observable & Emit Data.
+                          3.finally subcribe the data.
 
 
+40. How to pass headers in Angular Services?
+--> 
+
+     1.Directly we can pass headers through services.
+     2.through http Inerceptor we can pass header globally for all requests.
+
+41. what is HTTP INTERCEPTOR?
+--> 
+
+     1.HTTP Interceptor that can be used to perform various tasks related to HTTP request and response.
+
+     2. such as adding headers, handling errors, modifying the request or response data logging,authentication. etc.
+
+42. what is form?
+
+--> angular form used to handle the User input such as validation. value assigning and getting.
+
+    There are two types of forms
+    1.Template deriven form
+    2.Reactive form
+
+43.What is Template Drivan froms?
+
+--> A template-driven form is the simplest way to build a form in angular.
+
+    It uses Angular's two-way data-binding directive (ngModel) to create and manage the underlying form instance.additionally
+
+44. what is Reactive Forms ?
+--> Reactive forms provides access to information about a given control through properties and method provided with each instance.
+
+    Reactive forms, also known as model-driven forms.
+
+    Reactive form are based on reactive programming principles and allow you to manage form state and validation programmatically.
+
+45. What is formgroup formcontrol & formarray?
+--> 
+    Form Group : A formgroup instance provides it's model value as an object reduced from the values of each control in the group.
+
+    Form Control :- Form controls are classes that can hold both the data values and the validation information of any form element.
+
+    FormArray : - Angular's FormArray is a powerful tool for managin dyamic form in your angular application.
+
+46.What is Form Builder?
+--> the  formbuilder provides synstactic sugar that shortens creating instances of FormControl.FormGroup or Form array.
+
+It reduces the amount of boilerplate needed to build complex form.
+
+47. What is validators class?
+--> a validator is a function that processes a formControl or collection of control and returns an error map or null.A null map means that validation has passed.
+
+48.what is strong typed forms?
+--> The addition of strong types in angular form allows us to write code faster and with fewer bugs.Additionally.the editor can now provide us with type-ahead suggestions for our's form's value property.
+
+   This feature introducted in angular 14.
+
+49. how to get the value n disabled Reactive forms?
+
+-- Using getRawValue();
+
+50. State Management Options in angular?
+--> component state
+    RxJs
+    Services
+    NGRX
+
+51.How to pass data from one component to another?
+--> Method 1 : Parent to child via @Input decorator.
+    Method 2 : child to parent via @Output decorator and EventEmitter.
+    Method 3 : child to parent via @ViewChild decorator.
+    Method 4 : Unrelated components via a service & NGRX.
+
+52. what is singles in angular?
+--> 
+ 
+    1.Signals are introduced in angular 16 
+    2. A signal is a wrapper around a value that can notify interested consumers when that value changes.
+    3.Signals can contain any value, from simple primtives to complex data structures.
+    4.it's also used for state management.
+    5.Singals using RXJS operators.
+
+53. what stand alone template?
+
+--> In angular 17's standalone template not having default app.module
+
+     also components are default stand alone.
+
+     we can manage provides from app.config
+
+54. what is RXJS?
+
+--> RxJS(Reactive Extensions for javascript) is a library for reactive programming using observable that makes it easier to compose asynchronous or callback-base code.
+
+55.what is OBSERVABLE?
+
+--> RxJS introduces Observables, a new Push system for javascript.an observable is a producer of multiple values, "Pushing" them to Observers(consumers).
+
+    A function is lazily evaluted computation that syschronously returns a single value on invocation.
+
+
+
+
+
+
+
+    
 
 
 
