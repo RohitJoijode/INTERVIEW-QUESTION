@@ -396,6 +396,23 @@ It reduces the amount of boilerplate needed to build complex form.
     A function is lazily evaluted computation that syschronously returns a single value on invocation.
 
 
+56. What is provider in angular?
+--> Providers are classes that create and manage service objects the first time that Angular need to resolve a dependency.
+
+Providers is used to register the classes to an angular moduleasa service. and then. this service classes can be used by other components during the itself creation phase in the module
+
+57. what is difference between Component,Attribute and structural directives?
+
+--> Component Directive :- component directive is responsible for showing the firs whole view it is the most used one.
+                            Start with @ sign like @Component
+
+    Structural Directive :- Structural directive responsible for adding and deleting html elements in the view.
+                             Starts with * sign 
+                             like : *nglf ,*ngfor,*ngswitch
+
+    Attribute Directive :- Attribute directive is responsiblefor changing  the appearance of view by adding or removing style/cssclasses of the html elements.
+                            set insides square brackets.
+                            like [ngClass],[ngStyle]
 
 
 
