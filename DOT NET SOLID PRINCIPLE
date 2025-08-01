@@ -11,7 +11,7 @@
 --> SRP say that each class, modules or function in your program should only do one job.
 
   In other words, each should have full responsiblility for a single functionality of the program.
-
+	
   suppose we have customr class then we will do all the customer related thing in customer class.
 
 why SRP:

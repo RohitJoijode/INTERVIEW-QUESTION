@@ -30,4 +30,12 @@
                                     2.Application configuration
                                     3.Services that maintain global state
 
+2.Describe the service Lifetimes in asp.net core? or what is the difference between AddSingleton,AddScoped && AddTransient?
+--> Service lifetime describe for how long the instance of any class will persist.
+
+AddSingleton : - create only one instance when the service is requested for firsttime. and then the same instance will be shared by all different http requests.
+
+AddScoped :- Create single instance for each request. for a different http request there will be a different instance.
+
+AddTransient : - this instance is not shared at all, every time a new instance will be created.
 
