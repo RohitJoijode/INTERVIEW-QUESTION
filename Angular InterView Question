@@ -223,7 +223,7 @@ The stages will cover activities like:
 
            construction --> It is default method of the typescript class that is executed when the class is instatiated. it always run before any anguar hook and it is not a part of lifecycle hooks.
             ngOnChanges --> Called when input property changes
-            ngOnInit    --> Called when the component  is creatd.
+            ngOnInit    --> Called when the component  is created.
             ngOnChanges --> Called for component children.
                 ngAfterContentinit    - called for component children.
                 ngAfterContentChecked - called for component children.  - called when the component is destroyed.
@@ -255,7 +255,9 @@ constructor is widely used to inject dependencies(services) into the component c
 37.what are the type of Decorator?
 -->
             
-   Types of Decorators  :- class decorators
+   Types of Decorators  :- 
+   
+   class decorators
                            @NgModule
                            @Component
                            @Injectable 
@@ -279,9 +281,9 @@ constructor is widely used to inject dependencies(services) into the component c
 38.what is the differene between Promise and observable?
 --> 
  
-        Observable : - 1.Emit multiple values over a periodof time also called streaming of data.
+        Observable : - 1.Emit multiple values over a period of time also called streaming of data.
                        2. Are lazy :- they're not executed until we subscribe to them using the subscribe() method.
-                       3. Have sebscription that are cancellable using the Unsubscribe() method.
+                       3. Have seb scription that are cancellable using the Unsubscribe() method.
 
         Promise :- 1. emit a single value at a time
                    2. Are not lazy executed immediately after creation.
@@ -399,20 +401,22 @@ It reduces the amount of boilerplate needed to build complex form.
 56. What is provider in angular?
 --> Providers are classes that create and manage service objects the first time that Angular need to resolve a dependency.
 
-Providers is used to register the classes to an angular moduleasa service. and then. this service classes can be used by other components during the itself creation phase in the module
+Providers is used to register the classes to an angular module as a service. and then. this service classes can be used by other components during the itself creation phase in the module
 
 57. what is difference between Component,Attribute and structural directives?
 
---> Component Directive :- component directive is responsible for showing the firs whole view it is the most used one.
-                            Start with @ sign like @Component
+--> 
 
     Structural Directive :- Structural directive responsible for adding and deleting html elements in the view.
                              Starts with * sign 
                              like : *nglf ,*ngfor,*ngswitch
 
-    Attribute Directive :- Attribute directive is responsiblefor changing  the appearance of view by adding or removing style/cssclasses of the html elements.
+    Attribute Directive :- Attribute directive is responsible for changing  the appearance of view by adding or removing style/cssclasses of the html elements.
                             set insides square brackets.
                             like [ngClass],[ngStyle]
+
+    Component Directive :- component directive is responsible for showing the firs whole view it is the most used one.
+                            Start with @ sign like @Component
 
 
 
